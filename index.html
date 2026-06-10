@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrackrRacing – Free Daily Horse Racing Tips</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0d0d0d;color:#f0e6c8;font-family:'Segoe UI',sans-serif;line-height:1.6;}
+  a{color:#c9a84c;text-decoration:none;}
+  .gold{color:#c9a84c;}
+  .btn{display:inline-block;background:#c9a84c;color:#0d0d0d;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:6px;border:none;cursor:pointer;transition:background .2s;}
+  .btn:hover{background:#e0b85a;}
+  .btn-outline{background:transparent;border:2px solid #c9a84c;color:#c9a84c;}
+  .btn-outline:hover{background:#c9a84c;color:#0d0d0d;}
+  section{padding:72px 20px;}
+  .container{max-width:800px;margin:0 auto;}
+  .center{text-align:center;}
 
+  /* NAV */
+  nav{background:#0d0d0d;border-bottom:1px solid #2a2a2a;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .logo{font-size:1.3rem;font-weight:700;letter-spacing:.5px;color:#c9a84c;}
+  .logo span{color:#f0e6c8;}
+
+  /* HERO */
+  .hero{background:#111;border-bottom:1px solid #222;padding:90px 20px 80px;}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:18px;}
+  .hero h1 em{color:#c9a84c;font-style:normal;}
+  .hero p{font-size:1.1rem;color:#b0a080;max-width:560px;margin:0 auto 36px;}
+  .signup-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+  .signup-form input[type=email]{flex:1;min-width:220px;padding:14px 16px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#f0e6c8;font-size:1rem;outline:none;}
+  .signup-form input[type=email]:focus{border-color:#c9a84c;}
+  .hero-sub{margin-top:18px;font-size:.85rem;color:#6b5e3e;}
+
+  /* SOCIAL PROOF */
+  .proof{background:#0d0d0d;padding:28px 20px;border-bottom:1px solid #1e1e1e;}
+  .proof-inner{max-width:700px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:center;}
+  .proof-item{display:flex;align-items:center;gap:8px;font-size:.9rem;color:#a09070;}
+  .proof-item strong{color:#c9a84c;font-size:1rem;}
+
+  /* BENEFITS */
+  .benefits{background:#111;}
+  .benefits h2{font-size:1.8rem;font-weight:700;margin-bottom:48px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:28px 22px;}
+  .card-icon{font-size:2rem;margin-bottom:14px;}
+  .card h3{font-size:1rem;font-weight:700;color:#c9a84c;margin-bottom:8px;}
+  .card p{font-size:.9rem;color:#9a8a6a;line-height:1.6;}
+
+  /* HOW IT WORKS */
+  .how{background:#0d0d0d;}
+  .how h2{font-size:1.8rem;font-weight:700;margin-bottom:48px;}
+  .steps{display:flex;flex-direction:column;gap:24px;}
+  .step{display:flex;gap:20px;align-items:flex-start;}
+  .step-num{background:#c9a84c;color:#0d0d0d;font-weight:800;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+  .step-text h3{font-size:1rem;font-weight:700;margin-bottom:4px;}
+  .step-text p{font-size:.9rem;color:#9a8a6a;}
+
+  /* CTA */
+  .cta{background:#111;border-top:1px solid #222;border-bottom:1px solid #222;}
+  .cta h2{font-size:1.8rem;font-weight:700;margin-bottom:12px;}
+  .cta p{color:#9a8a6a;margin-bottom:32px;}
+  .cta .signup-form{margin:0 auto;}
+
+  /* FOOTER */
+  footer{background:#0a0a0a;padding:28px 20px;text-align:center;font-size:.8rem;color:#4a4030;border-top:1px solid #1a1a1a;}
+  footer a{color:#6b5e3e;}
+  footer .socials{display:flex;justify-content:center;gap:18px;margin-bottom:14px;}
+  footer .socials a{color:#9a8a6a;font-size:.85rem;}
+  footer .socials a:hover{color:#c9a84c;}
+  .disclaimer{margin-top:10px;font-size:.75rem;color:#3a3028;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Trackr<span>Racing</span></div>
+  <a href="#signup" class="btn btn-outline" style="padding:9px 20px;font-size:.85rem;">Get Free Tips</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero center" id="signup">
+  <div class="container">
+    <h1>Free Daily Horse<br>Racing Tips — <em>Straight<br>To Your Inbox</em></h1>
+    <p>Expert picks, daily selections, and racing insights from a dedicated tipster community. 100% free until January 2027.</p>
+    <div class="signup-form">
+      <a href="https://trackrracing.substack.com" target="_blank" class="btn">Get Free Tips →</a>
+    </div>
+    <p class="hero-sub">No spam. Unsubscribe any time. Free until January 2027.</p>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="proof-inner">
+    <div class="proof-item">🏇 <strong>4,200+</strong> followers on Facebook</div>
+    <div class="proof-item">📬 <strong>Daily tips</strong> every racing day</div>
+    <div class="proof-item">💰 <strong>100% free</strong> until January 2027</div>
+    <div class="proof-item">📊 <strong>Consistent</strong> selections & analysis</div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="benefits center">
+  <div class="container">
+    <h2>What You <span class="gold">Get</span></h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <h3>Daily Selections</h3>
+        <p>Hand-picked tips for every major race day, delivered to your inbox before racing begins.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Expert Analysis</h3>
+        <p>Form, going, trainer and jockey trends — we do the homework so you don't have to.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>UK & Irish Racing</h3>
+        <p>Focused coverage of British and Irish fixtures, with the best value selections highlighted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container center">
+    <h2>How It <span class="gold">Works</span></h2>
+    <div class="steps" style="max-width:480px;margin:0 auto;text-align:left;">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h3>Sign up with your email</h3>
+          <p>Takes 10 seconds — just drop your email in the box above. No payment details needed.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h3>Get tips in your inbox</h3>
+          <p>Every racing day, you'll receive our selections with reasoning before the races start.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h3>Back winners with confidence</h3>
+          <p>Use our picks your way — whether you're a casual punter or a serious backer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta center">
+  <div class="container">
+    <h2>Ready to Start <span class="gold">Winning?</span></h2>
+    <p>Join thousands of racing fans already getting free tips every day.</p>
+    <div class="signup-form">
+      <a href="https://trackrracing.substack.com" target="_blank" class="btn">Get Free Tips →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="socials">
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+    <a href="#">X / Twitter</a>
+  </div>
+  <p>© 2025 TrackrRacing. All rights reserved. <a href="#">Privacy Policy</a> · <a href="mailto:tips@trackrracing.com">hello@trackrracing.com</a></p>
+  <p class="disclaimer">For entertainment purposes only. Please gamble responsibly. 18+ only. BeGambleAware.org</p>
+</footer>
+
+</body>
+</html>
