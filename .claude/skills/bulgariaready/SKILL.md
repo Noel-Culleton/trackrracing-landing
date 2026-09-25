@@ -48,6 +48,28 @@ Entities (`base44/entities/*.jsonc`): `UserProfile`, `ChecklistItem`, `WaitlistS
 `ViewingNote`, `PetProfile`, `CommunityCheck`, `AppSettings`, `Article`, `Enquiry`,
 `PartnerListing`, `User`.
 
+### How the Bulgarian audio works
+
+`src/lib/speech.js` resolves playback in three steps:
+
+1. **Recorded MP3** from `src/lib/audioManifest.js` (Azure neural voice
+   `bg-BG-KalinaNeural`, served from `/audio/bg/*.mp3`) — device-independent, works on
+   any phone.
+2. **Device Bulgarian voice** via `speechSynthesis` with `lang: 'bg-BG'`.
+3. Neither available → `canSpeak()` returns false and `SpeakButton` **renders nothing**.
+   The button disappears rather than failing silently, which is good design but means
+   "no button" and "broken" look identical to a user.
+
+The manifest holds ~88 entries: the phrase bank, the alphabet **example words**
+(Аптека, Къща, Нотариус…) and the numbers.
+
+**Known gap: the 30 individual letters have no recordings.** `speech.js` exports
+`letterOnly()` to say just "Б" from a "Б б" card, but `audioManifest["Б"]` doesn't
+exist, so it falls through to the device voice. Bulgarian TTS voices are not installed
+by default on iOS or most Android devices, so on a typical phone the speaker button on
+each *letter* is invisible while the example word beside it plays fine. Fix is to
+generate 30 more clips with the same voice and add them to the manifest.
+
 ### The state that actually matters
 
 As of September 2026:
