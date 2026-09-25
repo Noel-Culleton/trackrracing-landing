@@ -1,0 +1,98 @@
+{
+  "size": "square",
+  "brand": "BulgariaReady",
+  "google_fonts": [
+    "Fraunces:wght@700",
+    "Inter:wght@400;600;700"
+  ],
+  "theme": {
+    "bg": "#F7F4ED",
+    "fg": "#1A2420",
+    "accent": "#1B5E43",
+    "muted": "#5E6B63",
+    "display_font": "'Fraunces',Georgia,serif",
+    "body_font": "'Inter',sans-serif"
+  },
+  "cards": [
+    {
+      "name": "01-six-letters",
+      "bg": "#1B5E43",
+      "fg": "#FFFFFF",
+      "accent": "#8FC4A8",
+      "muted": "rgba(255,255,255,.80)",
+      "h1": 78,
+      "extra_css": ".grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 26px;margin-top:52px}\n.cell{background:rgba(255,255,255,.09);border-radius:18px;padding:26px 10px;text-align:center}\n.cy{font-family:'Fraunces',serif;font-weight:700;font-size:70px;line-height:1;color:#fff}\n.eq{font-size:25px;font-weight:700;color:#8FC4A8;margin-top:12px;letter-spacing:.05em}",
+      "content": "<div class=\"kicker\">Bulgarian alphabet</div>\n<h1>Six letters that fool<br>every English speaker</h1>\n<div class=\"grid\">\n<div class=\"cell\"><div class=\"cy\">В</div><div class=\"eq\">= V, not B</div></div>\n<div class=\"cell\"><div class=\"cy\">Н</div><div class=\"eq\">= N, not H</div></div>\n<div class=\"cell\"><div class=\"cy\">Р</div><div class=\"eq\">= R, not P</div></div>\n<div class=\"cell\"><div class=\"cy\">С</div><div class=\"eq\">= S, not C</div></div>\n<div class=\"cell\"><div class=\"cy\">У</div><div class=\"eq\">= OO, not Y</div></div>\n<div class=\"cell\"><div class=\"cy\">Х</div><div class=\"eq\">= H, not X</div></div></div>"
+    },
+    {
+      "name": "02-the-nod",
+      "bg": "#C0562E",
+      "fg": "#FFFFFF",
+      "accent": "rgba(255,255,255,.75)",
+      "muted": "rgba(255,255,255,.90)",
+      "h1": 152,
+      "extra_css": ".sub{font-size:34px;max-width:820px}",
+      "content": "<div class=\"kicker\">Before you arrive</div>\n<h1>A nod<br>means<br>no.</h1>\n<p class=\"sub\">In Bulgaria a shake of the head means yes. When it matters, say the\nword — <strong>да</strong> or <strong>не</strong>.</p>"
+    },
+    {
+      "name": "03-land-trap",
+      "bg": "#F7F4ED",
+      "fg": "#1A2420",
+      "accent": "#1B5E43",
+      "muted": "#5E6B63",
+      "h1": 94,
+      "extra_css": ".hl{color:#C0562E}",
+      "content": "<div class=\"kicker\">Buying after Brexit</div>\n<h1>You can buy<br>the house.<br><span class=\"hl\">Not the land.</span></h1>\n<p class=\"sub\">UK citizens are non-EU nationals here. Buildings, yes — in your own name.\nThe ground underneath normally needs a Bulgarian company.</p>"
+    },
+    {
+      "name": "04-twelve-signs",
+      "bg": "#F7F4ED",
+      "fg": "#1A2420",
+      "accent": "#C0562E",
+      "muted": "#5E6B63",
+      "h1": 74,
+      "extra_css": ".rows{margin-top:46px;display:grid;gap:18px}\n.row{display:flex;align-items:baseline;gap:28px;background:#fff;border:1px solid #E2DDD1;\nborder-radius:16px;padding:24px 30px}\n.bgw{font-family:'Fraunces',serif;font-weight:700;font-size:54px;color:#1A2420;min-width:300px}\n.en{font-size:31px;color:#1B5E43;font-weight:600}",
+      "content": "<div class=\"kicker\">Read the door before you open it</div>\n<h1>12 Bulgarian signs<br>you'll actually need</h1>\n<div class=\"rows\">\n<div class=\"row\"><span class=\"bgw\">ВХОД</span><span class=\"en\">Entrance</span></div>\n<div class=\"row\"><span class=\"bgw\">ИЗХОД</span><span class=\"en\">Exit</span></div>\n<div class=\"row\"><span class=\"bgw\">АПТЕКА</span><span class=\"en\">Pharmacy</span></div>\n<div class=\"row\"><span class=\"bgw\">БОЛНИЦА</span><span class=\"en\">Hospital</span></div></div>"
+    },
+    {
+      "name": "05-sofia",
+      "bg": "#1B5E43",
+      "fg": "#FFFFFF",
+      "accent": "#8FC4A8",
+      "muted": "rgba(255,255,255,.80)",
+      "h1": 96,
+      "extra_css": ".nums{display:flex;gap:34px;margin-top:54px}\n.n{flex:1;background:rgba(255,255,255,.09);border-radius:20px;padding:36px 30px}\n.v{font-family:'Fraunces',serif;font-weight:700;font-size:82px;line-height:1;color:#fff}\n.l{font-size:25px;color:#8FC4A8;margin-top:14px;font-weight:700;letter-spacing:.06em}",
+      "content": "<div class=\"kicker\">Average gross wage · NSI, March 2026</div>\n<h1>Sofia isn't<br>Bulgaria.</h1>\n<div class=\"nums\">\n<div class=\"n\"><div class=\"v\">&euro;1,732</div><div class=\"l\">SOFIA</div></div>\n<div class=\"n\"><div class=\"v\">&euro;1,475</div><div class=\"l\">NATIONAL</div></div></div>"
+    },
+    {
+      "name": "06-february",
+      "bg": "#F7F4ED",
+      "fg": "#1A2420",
+      "accent": "#1B5E43",
+      "muted": "#5E6B63",
+      "h1": 104,
+      "extra_css": ".dim{color:#9AA49D}.hl{color:#1B5E43}",
+      "content": "<div class=\"kicker\">Viewing trips</div>\n<h1><span class=\"dim\">Everyone views<br>in August.</span><br><span class=\"hl\">Go back in<br>February.</span></h1>\n<p class=\"sub\">Is the road ploughed? Is the shop open? Does anyone live there at all in\nwinter?</p>"
+    },
+    {
+      "name": "07-renovation",
+      "bg": "#FFFFFF",
+      "fg": "#1A2420",
+      "accent": "#C0562E",
+      "muted": "#5E6B63",
+      "h1": 90,
+      "extra_css": ".quote{font-family:'Fraunces',serif;font-size:200px;line-height:.62;\ncolor:#F0D9CC;display:block;margin-bottom:-18px}.hl{color:#C0562E}",
+      "content": "<div class=\"kicker\">Village property</div>\n<span class=\"quote\">&ldquo;</span>\n<h1>&ldquo;Needs some work&rdquo;<br>can mean a new roof,<br>a rewire and<br><span class=\"hl\">damp treatment.</span></h1>\n<p class=\"sub\">The cheap house is cheap for a reason. Survey before you buy, not after.</p>"
+    },
+    {
+      "name": "08-euro",
+      "bg": "#144733",
+      "fg": "#FFFFFF",
+      "accent": "#8FC4A8",
+      "muted": "rgba(255,255,255,.80)",
+      "h1": 72,
+      "extra_css": ".rate{font-family:'Fraunces',serif;font-weight:700;font-size:166px;\nline-height:1;color:#fff;letter-spacing:-.03em;margin:26px 0 10px}\n.rl{font-size:27px;color:#8FC4A8;font-weight:700;letter-spacing:.11em}",
+      "content": "<div class=\"kicker\">Since 1 January 2026</div>\n<h1>What the euro<br>actually changed</h1>\n<div class=\"rate\">1.95583</div>\n<div class=\"rl\">LEVA TO THE EURO — FIXED</div>\n<p class=\"sub\">Rents didn't move; leases were already in euro. Retail and hospitality\ncrept up, as they do everywhere.</p>"
+    }
+  ]
+}
