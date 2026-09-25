@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BulgariaReady — Plan Your Move to Bulgaria</title>
+<meta name="description" content="A step-by-step planner for buying property and moving to Bulgaria — residency, areas, the buying process, pets and paperwork. Launching January 2027. Register for founder access.">
+
+<!-- Open Graph / social -->
+<meta property="og:title" content="BulgariaReady — Plan Your Move to Bulgaria">
+<meta property="og:description" content="Residency, areas, buying, pets and paperwork — in one plan built around your situation. Launching January 2027.">
+<meta property="og:type" content="website">
+<!-- TODO: set these to your live domain once the site is deployed -->
+<meta property="og:url" content="https://bulgariaready.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    color-scheme: light;
+
+    --green:      #1B5E43;
+    --green-dark: #144733;
+    --green-soft: #E7F0EA;
+    --terra:      #C0562E;
+    --terra-soft: #FBEDE6;
+
+    --sand:   #F7F4ED;
+    --cream:  #FFFFFF;
+    --ink:    #1A2420;
+    --body-c: #414E47;
+    --muted:  #6B7871;
+    --border: #E2DDD1;
+
+    --display: 'Fraunces', Georgia, serif;
+    --body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --wrap: 1080px;
+    --radius: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--sand);
+    color: var(--body-c);
+    font-family: var(--body);
+    /* Deliberately large: a big share of this audience is 50+ */
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--green); }
+
+  h1, h2, h3 {
+    font-family: var(--display);
+    color: var(--ink);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; margin-left: auto; margin-right: auto; }
+
+  section { padding: 76px 0; }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4.2vw, 40px);
+    margin-bottom: 16px;
+  }
+
+  .section-intro {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+
+  /* ── NAV ───────────────────────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247,244,237,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .logo {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--green); }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--body);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: #fff;
+    padding: 14px 26px;
+    font-size: 16px;
+  }
+  .btn-primary:hover { background: var(--green-dark); }
+
+  .btn-sm { padding: 9px 18px; font-size: 14px; }
+
+  /* ── HERO ──────────────────────────────── */
+  .hero {
+    position: relative;
+    padding: 72px 0 0;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .launch-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--green-soft);
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 15px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+
+  .launch-pill::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 6.2vw, 62px);
+    margin-bottom: 22px;
+  }
+
+  .hero h1 em { font-style: normal; color: var(--green); }
+
+  .hero-sub {
+    font-size: 19px;
+    max-width: 520px;
+    margin-bottom: 28px;
+  }
+
+  .hero-points {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .hero-points li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 16px;
+  }
+
+  .hero-points li::before {
+    content: '';
+    position: absolute;
+    left: 4px; top: 9px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--terra);
+  }
+
+  /* ── SIGNUP CARD ───────────────────────── */
+  .signup-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px 28px;
+    box-shadow: 0 1px 2px rgba(26,36,32,0.04), 0 12px 28px -14px rgba(26,36,32,0.16);
+  }
+
+  .signup-card h2 {
+    font-size: 23px;
+    margin-bottom: 6px;
+  }
+
+  .signup-card .card-sub {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+
+  .field { margin-bottom: 16px; }
+
+  .field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .field .hint {
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .field input[type=text],
+  .field input[type=email],
+  .field select {
+    width: 100%;
+    font-family: var(--body);
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--cream);
+    padding: 12px 13px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .field input:focus,
+  .field select:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(27,94,67,0.14);
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .consent {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+    margin: 20px 0;
+  }
+
+  .consent input {
+    margin-top: 4px;
+    width: 17px; height: 17px;
+    accent-color: var(--green);
+    flex-shrink: 0;
+  }
+
+  .consent label {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .signup-card .btn-primary { width: 100%; text-align: center; }
+
+  .form-note {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  /* honeypot — hidden from people, visible to naive bots */
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px; height: 1px;
+    overflow: hidden;
+  }
+
+  .form-error {
+    display: none;
+    background: var(--terra-soft);
+    border: 1px solid #EEC9B6;
+    color: #8F3C1D;
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 7px;
+    margin-bottom: 16px;
+  }
+  .form-error.show { display: block; }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 14px 4px;
+  }
+  .form-success.show { display: block; }
+  .form-success .tick {
+    width: 46px; height: 46px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 24px;
+    line-height: 46px;
+  }
+  .form-success h3 { font-size: 20px; margin-bottom: 8px; }
+  .form-success p { font-size: 15px; color: var(--muted); }
+
+  /* ── HILLS (signature graphic) ─────────── */
+  .hills {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 56px;
+  }
+
+  /* ── FACT STRIP ────────────────────────── */
+  .facts {
+    background: var(--green);
+    color: #fff;
+    padding: 52px 0;
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 34px;
+  }
+
+  .fact-k {
+    font-family: var(--display);
+    font-size: 27px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .fact-v {
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.55;
+  }
+
+  .facts-foot {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ── CARD GRID ─────────────────────────── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-family: var(--body);
+    font-weight: 700;
+  }
+
+  .card p { font-size: 15px; color: var(--muted); }
+
+  .card-num {
+    font-family: var(--body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--terra);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  /* ── PASSPORT TABLE ────────────────────── */
+  .table-wrap {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    min-width: 560px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  thead th {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: #FBF9F4;
+  }
+
+  tbody th {
+    font-weight: 600;
+    color: var(--ink);
+    width: 34%;
+  }
+
+  tbody tr:last-child th,
+  tbody tr:last-child td { border-bottom: none; }
+
+  td { color: var(--muted); }
+
+  .yes { color: var(--green); font-weight: 600; }
+  .careful { color: var(--terra); font-weight: 600; }
+
+  .disclaimer {
+    font-size: 14px;
+    color: var(--muted);
+    background: var(--terra-soft);
+    border-left: 3px solid var(--terra);
+    padding: 16px 18px;
+    border-radius: 0 7px 7px 0;
+    margin-top: 24px;
+  }
+
+  /* ── PROFILES ──────────────────────────── */
+  .profiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .profile-chip {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ── TIMELINE ──────────────────────────── */
+  .timeline { display: grid; gap: 0; }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 26px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .tl-item:last-child { border-bottom: none; }
+
+  .tl-when {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 0.02em;
+    padding-top: 2px;
+  }
+
+  .tl-item.now .tl-when { color: var(--terra); }
+
+  .tl-what { font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .tl-desc { font-size: 15px; color: var(--muted); }
+
+  /* ── FAQ ───────────────────────────────── */
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+
+  .faq-item summary {
+    font-family: var(--body);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    padding: 20px 40px 20px 0;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 8px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--green);
+  }
+  .faq-item[open] summary::after { content: '–'; }
+
+  .faq-item .answer {
+    padding: 0 40px 22px 0;
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  /* ── FINAL CTA ─────────────────────────── */
+  .final {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .final-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+
+  .final h2 { font-size: clamp(30px, 5vw, 44px); margin-bottom: 16px; }
+  .final p { font-size: 18px; color: var(--muted); margin-bottom: 30px; }
+
+  /* ── FOOTER ────────────────────────────── */
+  footer {
+    padding: 44px 0 56px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .foot-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+
+  .foot-links { display: flex; flex-wrap: wrap; gap: 20px; }
+  .foot-links a { color: var(--muted); text-decoration: none; }
+  .foot-links a:hover { color: var(--green); text-decoration: underline; }
+
+  .foot-legal { font-size: 13px; line-height: 1.6; max-width: 720px; }
+
+  /* ── RESPONSIVE ────────────────────────── */
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding-top: 48px; }
+    section { padding: 60px 0; }
+    .tl-item { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 18px; }
+    .nav-inner { padding: 0 18px; }
+    .field-row { grid-template-columns: 1fr; }
+    .signup-card { padding: 24px 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="logo">Bulgaria<span>Ready</span></a>
+    <a href="#register" class="btn btn-primary btn-sm">Register interest</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div>
+        <div class="launch-pill">Launching January 2027</div>
+
+        <h1>Buying in Bulgaria?<br><em>Don't learn it the expensive way.</em></h1>
+
+        <p class="hero-sub">
+          BulgariaReady is a step-by-step planner for buying property and moving to
+          Bulgaria — built around your passport, your budget and your reason for going.
+        </p>
+
+        <ul class="hero-points">
+          <li>Know what you can actually buy before you fly out</li>
+          <li>Residency, paperwork and deadlines in the right order</li>
+          <li>Area guides, viewing notes and a community check for any address</li>
+          <li>A full pet relocation plan, if you're bringing the dog or cat</li>
+        </ul>
+      </div>
+
+      <!-- ═══ SIGNUP ═══ -->
+      <div class="signup-card" id="register">
+        <h2>Get founder access</h2>
+        <p class="card-sub">
+          Register now and you'll get early access before launch, plus founder pricing
+          locked in for good.
+        </p>
+
+        <div class="form-error" id="formError" role="alert"></div>
+
+        <form id="signupForm" novalidate>
+          <div class="field">
+            <label for="firstname">First name <span class="hint">(optional)</span></label>
+            <input type="text" id="firstname" name="FIRSTNAME" autocomplete="given-name">
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="CONTACT_EMAIL" required autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="passport">Which passport do you hold?</label>
+            <select id="passport" name="CONTACT_CF1">
+              <option value="">Select…</option>
+              <option value="eu">Ireland or another EU country</option>
+              <option value="uk">United Kingdom</option>
+              <option value="other">Somewhere else</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="reason">Why Bulgaria?</label>
+              <select id="reason" name="CONTACT_CF2">
+                <option value="">Select…</option>
+                <option value="retiring">Retiring there</option>
+                <option value="holiday_home">Holiday home</option>
+                <option value="relocating_full_time">Moving full time</option>
+                <option value="remote_working">Working remotely</option>
+                <option value="investment_only">Investment only</option>
+                <option value="not_sure">Still deciding</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="budget">Budget</label>
+              <select id="budget" name="CONTACT_CF3">
+                <option value="">Select…</option>
+                <option value="under_30k">Under €30,000</option>
+                <option value="30k_60k">€30,000 – €60,000</option>
+                <option value="60k_100k">€60,000 – €100,000</option>
+                <option value="100k_200k">€100,000 – €200,000</option>
+                <option value="over_200k">Over €200,000</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- honeypot: real people never fill this in -->
+          <div class="hp" aria-hidden="true">
+            <label for="website_url">Leave this field empty</label>
+            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+              Email me when BulgariaReady launches, plus occasional useful updates about
+              moving to Bulgaria. I can unsubscribe at any time.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submitBtn">Register my interest</button>
+
+          <p class="form-note">No payment. No card. Unsubscribe in one click.</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="tick">✓</div>
+          <h3>You're on the list</h3>
+          <p id="successMsg">
+            Check your inbox to confirm your email address — that last step is what
+            makes sure our launch email actually reaches you.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- signature graphic: Bulgarian hill country -->
+  <svg class="hills" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path fill="#E7F0EA" d="M0,96 L120,80 L260,104 L400,62 L540,92 L680,54 L820,86 L960,66 L1100,98 L1240,72 L1380,94 L1440,82 L1440,150 L0,150 Z"/>
+    <path fill="#CFE1D5" d="M0,120 L160,104 L300,124 L460,96 L620,118 L780,92 L940,116 L1100,100 L1260,122 L1440,106 L1440,150 L0,150 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ FACTS ═══ -->
+<div class="facts">
+  <div class="wrap">
+    <div class="facts-grid">
+      <div>
+        <div class="fact-k">Euro since 2026</div>
+        <p class="fact-v">
+          Bulgaria joined the euro on 1 January 2026 at a fixed rate of 1.95583 leva.
+          The lev stopped being legal tender on 1 February 2026 — every price you'll
+          see quoted now is in euro.
+        </p>
+      </div>
+      <div>
+        <div class="fact-k">Full Schengen member</div>
+        <p class="fact-v">
+          Since 1 January 2025 there are no border checks by land, air or sea between
+          Bulgaria and the rest of the Schengen area. Driving down with a car full of
+          belongings is genuinely straightforward.
+        </p>
+      </div>
+      <div>
+        <div class="fact-k">In the EU since 2007</div>
+        <p class="fact-v">
+          Which is exactly why an Irish passport and a British one now buy you very
+          different things in Bulgaria. That difference is the single most expensive
+          thing people get wrong.
+        </p>
+      </div>
+    </div>
+    <p class="facts-foot">Correct as of September 2026. Rules change — we track them, and we'll tell you when they do.</p>
+  </div>
+</div>
+
+<!-- ═══ PASSPORT COMPARISON ═══ -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Irish vs British buyers</p>
+    <h2 class="section-title">Your passport changes what you can buy</h2>
+    <p class="section-intro">
+      Since Brexit, British buyers are treated as non-EU nationals in Bulgaria. It
+      doesn't stop you buying — but it changes the structure, the cost and the
+      timeline, and estate agents don't always volunteer that.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">What you're buying</th>
+            <th scope="col">Irish / EU passport</th>
+            <th scope="col">UK passport</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">An apartment</th>
+            <td><span class="yes">In your own name</span></td>
+            <td><span class="yes">In your own name</span></td>
+          </tr>
+          <tr>
+            <th scope="row">A house or building</th>
+            <td><span class="yes">In your own name</span></td>
+            <td><span class="yes">In your own name</span> — the building only</td>
+          </tr>
+          <tr>
+            <th scope="row">The land it stands on</th>
+            <td><span class="yes">In your own name</span></td>
+            <td><span class="careful">Needs a Bulgarian company</span> — an EOOD, about €1 of share capital, a few working days to register</td>
+          </tr>
+          <tr>
+            <th scope="row">Agricultural or forest land</th>
+            <td><span class="careful">Restricted</span></td>
+            <td><span class="careful">Restricted</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Staying beyond 90 days</th>
+            <td>Register locally, longer-term residence card</td>
+            <td><span class="careful">Type D visa first</span>, applied for before you travel, then a residence permit renewed annually</td>
+          </tr>
+          <tr>
+            <th scope="row">Permanent residence</th>
+            <td>After 5 years</td>
+            <td>After 5 years of continuous legal residence</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="disclaimer">
+      <strong>This is general information, not legal advice.</strong> Bulgarian property
+      and immigration rules change, and your own circumstances matter. BulgariaReady
+      helps you understand the process and ask the right questions — always confirm the
+      detail with a qualified Bulgarian lawyer before you sign or transfer money.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ WHAT'S COVERED ═══ -->
+<section style="background:#FBF9F4; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <p class="eyebrow">What's inside</p>
+    <h2 class="section-title">Nine things to get right, in order</h2>
+    <p class="section-intro">
+      Most people research these in a random order, off forums, over two years. The app
+      walks you through them as one plan, with the steps that apply to your situation
+      and none of the ones that don't.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-num">01</span>
+        <h3>Legal &amp; residency</h3>
+        <p>Visas, permits, timelines and what your passport actually entitles you to.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">02</span>
+        <h3>Choosing your area</h3>
+        <p>Coast, mountains, city or village — cost, climate, healthcare access and how many others are near you.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">03</span>
+        <h3>Buying the property</h3>
+        <p>Preliminary contract, notary deed, searches, deposits and the fees nobody mentions up front.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">04</span>
+        <h3>Bringing your pets</h3>
+        <p>Microchip, rabies, tapeworm and paperwork — with the dates worked backwards from your travel day.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">05</span>
+        <h3>The viewing trip</h3>
+        <p>What to see, what to ask, what to photograph. Structured notes for every property you walk through.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">06</span>
+        <h3>Language</h3>
+        <p>The Cyrillic and the phrases you genuinely need at a notary, a bank and a builder's merchant.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">07</span>
+        <h3>Documents</h3>
+        <p>What to gather, what to translate, what to apostille — and in which order.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">08</span>
+        <h3>Settling in</h3>
+        <p>Utilities, banking, tax registration, healthcare, driving licence and the local council.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">09</span>
+        <h3>Community check</h3>
+        <p>Score any address on the things that decide whether you'll still be happy there in year three.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROFILES ═══ -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Built around you</p>
+    <h2 class="section-title">A retiree's plan isn't an investor's plan</h2>
+    <p class="section-intro">
+      You answer a handful of questions when you start. The plan you get is filtered to
+      your passport, budget, timeline and what you're actually going for.
+    </p>
+
+    <div class="profiles">
+      <span class="profile-chip">Retiring to Bulgaria</span>
+      <span class="profile-chip">Buying a holiday home</span>
+      <span class="profile-chip">Relocating full time</span>
+      <span class="profile-chip">Working remotely</span>
+      <span class="profile-chip">Investing only</span>
+      <span class="profile-chip">Still deciding</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Your situation, not a generic guide</h3>
+        <p>
+          Bringing two dogs and buying a village house with land as a UK citizen is a
+          completely different job to buying a seaside apartment on an Irish passport.
+          The checklist reflects that.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Shortlist as you go</h3>
+        <p>
+          Save areas, log every viewing with photos and concerns, and compare properties
+          side by side instead of from memory three weeks later.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Nothing missed, nothing early</h3>
+        <p>
+          Some steps have to happen in a strict order — pet vaccinations and visa
+          applications especially. The plan sequences them and tells you when to start.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section style="background:#FBF9F4; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap narrow">
+    <p class="eyebrow">What happens next</p>
+    <h2 class="section-title">Between now and January</h2>
+
+    <div class="timeline">
+      <div class="tl-item now">
+        <div class="tl-when">Now</div>
+        <div>
+          <div class="tl-what">Registration open</div>
+          <p class="tl-desc">
+            We're building, and we're writing the country research that sits underneath
+            it. Registering now costs nothing and locks in founder pricing.
+          </p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Late 2026</div>
+        <div>
+          <div class="tl-what">Early previews</div>
+          <p class="tl-desc">
+            Registered members see the area guides and the checklist first, and help us
+            decide what makes the launch.
+          </p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">January 2027</div>
+        <div>
+          <div class="tl-what">BulgariaReady launches</div>
+          <p class="tl-desc">
+            Full access opens. Everyone on this list gets in first, at the founder rate,
+            for as long as they stay subscribed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section>
+  <div class="wrap narrow">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title">Before you sign up</h2>
+
+    <details class="faq-item">
+      <summary>When does it actually launch?</summary>
+      <p class="answer">
+        January 2027. We'd rather tell you a real date and hit it than open something
+        half-built. Everyone registered here gets access before it opens publicly.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What will it cost?</summary>
+      <p class="answer">
+        There'll be a free tier that covers the basics, and a paid tier for the full
+        planner, area data and document tools. Registering now locks in founder pricing,
+        which will be below whatever we launch at publicly.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need to be buying already?</summary>
+      <p class="answer">
+        No. Plenty of people on this list are still working out whether Bulgaria is
+        right for them at all. That's a perfectly good reason to be here — deciding
+        properly is cheaper than deciding twice.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is this legal or financial advice?</summary>
+      <p class="answer">
+        No, and we're careful about that line. BulgariaReady explains the process,
+        sequences it, and makes sure you walk into a lawyer's office knowing what to
+        ask. It does not replace a Bulgarian lawyer, accountant or tax adviser, and you
+        should use all three.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How often will you email me?</summary>
+      <p class="answer">
+        Rarely. A confirmation now, occasional updates worth reading between now and
+        January, and the launch email. One click unsubscribes you, and we never pass
+        your details to estate agents or anyone else.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Who's behind it?</summary>
+      <p class="answer">
+        A small independent team — we're not an estate agency and we don't take
+        commission on property. That matters, because it means nothing in the app is
+        steering you towards a particular seller.
+      </p>
+    </details>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<div class="final">
+  <section>
+    <div class="wrap">
+      <div class="final-inner">
+        <h2>Get it right the first time</h2>
+        <p>
+          Register your interest and be first in when BulgariaReady opens in January 2027.
+        </p>
+        <a href="#register" class="btn btn-primary">Register my interest</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="logo">Bulgaria<span>Ready</span></div>
+      <div class="foot-links">
+        <!-- TODO: replace with your real Zoho address and policy pages -->
+        <a href="mailto:hello@bulgariaready.com">hello@bulgariaready.com</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+    <p class="foot-legal">
+      &copy; 2026 BulgariaReady. Information on this page is general guidance about
+      moving to and buying property in Bulgaria, correct to the best of our knowledge as
+      of September 2026. It is not legal, immigration, tax or financial advice, and it
+      is not a substitute for professional advice from a qualified Bulgarian
+      practitioner. We are not an estate agency and we receive no commission on property
+      sales.
+    </p>
+  </div>
+</footer>
+
+<script>
+/* ────────────────────────────────────────────────────────────
+   SETUP — the only part you need to edit.
+
+   In Zoho Campaigns: Contacts → Manage Lists → your list →
+   Signup Forms → Embed Form. Copy the generated <form> tag's
+   action URL into ACTION, and copy every <input type="hidden">
+   Zoho generates into HIDDEN as key/value pairs.
+
+   Until ACTION is filled in, the form stays in preview mode:
+   it validates and shows the success state, but nothing is sent
+   anywhere. That keeps the page safe to put live early.
+   ──────────────────────────────────────────────────────────── */
+var ZOHO = {
+  ACTION: '',   // e.g. 'https://xxxxx.maillist-manage.eu/weboptin.zc'
+  HIDDEN: {
+    // 'zc_trackCode': '...',
+    // 'lD':           '...',
+    // 'emailReportId':'...',
+    // 'zx':           '...',
+    // 'submitType':   'optinCustomView',
+    // 'mode':         'OptinCreateView'
+  }
+};
+
+(function () {
+  var form    = document.getElementById('signupForm');
+  var errBox  = document.getElementById('formError');
+  var success = document.getElementById('formSuccess');
+  var btn     = document.getElementById('submitBtn');
+  var msg     = document.getElementById('successMsg');
+
+  var STORE_KEY = 'bulgariaready_registered';
+
+  function showError(text) {
+    errBox.textContent = text;
+    errBox.classList.add('show');
+  }
+
+  function clearError() {
+    errBox.classList.remove('show');
+  }
+
+  function showSuccess(previewMode) {
+    form.style.display = 'none';
+    clearError();
+    if (previewMode) {
+      msg.textContent = 'Preview mode — the form is working, but it is not connected ' +
+                        'to Zoho yet, so nothing was sent.';
+    }
+    success.classList.add('show');
+  }
+
+  /* Returning visitors who already signed up see the done state.
+     Wrapped because storage throws in some private-browsing modes. */
+  try {
+    if (window.localStorage && localStorage.getItem(STORE_KEY) === 'yes') {
+      form.style.display = 'none';
+      success.classList.add('show');
+      msg.textContent = 'You registered from this device already. We\'ll be in touch ' +
+                        'before we open in January 2027.';
+    }
+  } catch (e) { /* no storage — show the normal form */ }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearError();
+
+    var email    = document.getElementById('email').value.trim();
+    var consent  = document.getElementById('consent').checked;
+    var honeypot = document.getElementById('website_url').value;
+
+    if (honeypot) { showSuccess(true); return; }   // bot — fail silently
+
+    if (!email || email.indexOf('@') < 1 || email.lastIndexOf('.') < email.indexOf('@')) {
+      showError('Please enter a valid email address so we can reach you.');
+      document.getElementById('email').focus();
+      return;
+    }
+
+    if (!consent) {
+      showError('Please tick the box to confirm we can email you.');
+      document.getElementById('consent').focus();
+      return;
+    }
+
+    try {
+      if (window.localStorage) localStorage.setItem(STORE_KEY, 'yes');
+    } catch (e2) { /* not essential */ }
+
+    if (!ZOHO.ACTION) { showSuccess(true); return; }   // not wired up yet
+
+    /* Build a real POST to Zoho. Done this way rather than hard-coding
+       Zoho's hidden fields into the markup so the whole integration
+       lives in the ZOHO object above. */
+    btn.disabled = true;
+    btn.textContent = 'Registering…';
+
+    var post = document.createElement('form');
+    post.method = 'POST';
+    post.action = ZOHO.ACTION;
+    post.style.display = 'none';
+
+    Object.keys(ZOHO.HIDDEN).forEach(function (k) {
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = ZOHO.HIDDEN[k];
+      post.appendChild(i);
+    });
+
+    ['FIRSTNAME', 'CONTACT_EMAIL', 'CONTACT_CF1', 'CONTACT_CF2', 'CONTACT_CF3']
+      .forEach(function (name) {
+        var src = form.querySelector('[name="' + name + '"]');
+        if (!src || !src.value) return;
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = name; i.value = src.value;
+        post.appendChild(i);
+      });
+
+    document.body.appendChild(post);
+    post.submit();
+  });
+})();
+</script>
+
+<!-- structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BulgariaReady",
+  "description": "A step-by-step planner for buying property and moving to Bulgaria. Launching January 2027.",
+  "url": "https://bulgariaready.com/"
+}
+</script>
+
+</body>
+</html>
