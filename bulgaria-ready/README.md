@@ -70,17 +70,47 @@ list, which is why it's the `<h1>` on the hub page.
 
 ---
 
-## 2. Suggested next pages
+## 2. Pages built, and what's left
 
-In priority order, all difficulty 0 and all matched to what the app already does:
+Built and cross-linked (the internal linking is what makes a cluster rank rather than a
+set of orphan pages):
 
-1. **Cost of living in Bulgaria** (260/mo, KD 0) — a real table with euro figures
-2. **Living in Bulgaria** (210/mo, KD 0) — the honest pros-and-cons piece
-3. **Basic Bulgarian phrases** (140/mo, KD 0) — natural sequel to the alphabet page
-4. **Retiring to Bulgaria** (40/mo, KD 2) — small, but exactly your buyer
+1. **Hub** `/` — "moving to bulgaria from uk" (170/mo, KD 0, £2.12 CPC)
+2. **Bulgarian alphabet** (2,400/mo, KD 0) — the traffic magnet
+3. **Cost of living in Bulgaria** (260/mo, KD 0)
+4. **Living in Bulgaria** (210/mo, KD 0)
+5. **Basic Bulgarian phrases** (140/mo, KD 0)
 
-Each one should link to the app and to the other guides. That internal linking is what
-makes a cluster rank rather than a set of orphan pages.
+Still unwritten: **Retiring to Bulgaria** (40/mo, KD 2) — small volume, but precisely
+the buyer.
+
+---
+
+## 2a. IMPORTANT: don't duplicate the app
+
+The Base44 app is **far more built than its entity schema suggests** — 34 pages. Before
+writing any new content, read the app first:
+
+```
+list_directory(appId, path="src/pages")
+read_file(appId, paths=["src/pages/<Page>.jsx"])
+```
+
+`src/pages/Language.jsx` (22KB) already contains the full alphabet with phonetics,
+numbers, and a large categorised phrase bank — including property-viewing questions
+("Is the land included?", "Is the road passable in winter?") — plus a `SpeakButton` for
+spoken pronunciation and `FREE_LIMIT = 12` gating the rest behind premium.
+`Privacy.jsx`, `Terms.jsx`, `Refunds.jsx` and `Upgrade.jsx` exist too.
+
+**The overlap is deliberate and correct.** The app's content sits behind login and a
+paywall, so Google cannot index it. These public pages are the top-of-funnel the app
+can never be. They should *tease* the app's extras — audio, property phrases — not try
+to replace them, which is exactly what the `FREE_LIMIT = 12` model already implies. Both
+language pages now close with that pitch.
+
+What this means in practice: **write public pages that rank, and push depth into the
+app.** Never port app content out to the site, or site content into the app, without
+reading both first.
 
 ---
 
