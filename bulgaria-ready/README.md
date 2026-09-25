@@ -1,141 +1,179 @@
-# BulgariaReady — registration landing page
+# learn.bulgariaready.com — SEO content site
 
-A single, self-contained `index.html`. No build step, no dependencies, no framework.
-Open it in a browser and it works.
+Static pages designed to rank, pull in search traffic, and hand it to the live
+BulgariaReady app. **The app itself is untouched by anything in this folder.**
 
-Launch target for the app itself: **January 2027**.
-
----
-
-## 1. Fill in the placeholders
-
-Search `index.html` for `TODO` — there are three spots:
-
-| What | Where | Currently |
+| File | Serves as | Targets |
 |---|---|---|
-| Live domain (OG tags + JSON-LD) | `<head>` | `https://bulgariaready.com/` |
-| Contact email | footer | `hello@bulgariaready.com` |
-| Privacy / Terms links | footer | `/privacy.html`, `/terms.html` |
+| `index.html` | `/` | "moving to bulgaria from uk", "living in bulgaria", "cost of living in bulgaria" |
+| `bulgarian-alphabet.html` | `/bulgarian-alphabet` | "bulgarian alphabet" + its long tail |
+| `styles.css` | shared stylesheet | — |
+| `robots.txt`, `sitemap.xml` | crawl directives | — |
 
-The privacy page is **not optional** — you're collecting email addresses from EU and UK
-residents, so GDPR applies. The form already has an explicit, unticked consent box and
-tells people what they're signing up for, which is the part most sites get wrong.
+Every page links out to `https://bulgariaready.com` (the app). No page writes to it.
 
 ---
 
-## 2. Wire up the email capture
+## 1. Why the alphabet, and not "learn Bulgarian free"
 
-**Zoho Mail on its own will not work here.** Zoho Mail is a mailbox — it receives
-messages, it doesn't collect, store or segment a signup list. You need **Zoho
-Campaigns** (free tier is plenty for a pre-launch list) sitting behind the form, with
-Zoho Mail as the address people see and reply to.
+Your instinct — free Bulgarian for people moving over — was right. The specific
+phrasing was not, and the gap is large. UK search volumes and difficulty
+(DataForSEO, September 2026):
 
-### Steps
+| Keyword | Volume/mo | Difficulty | Verdict |
+|---|---:|---:|---|
+| **bulgarian alphabet** | **2,400** | **0** | The prize |
+| learn bulgarian | 320 | 5 | Decent secondary |
+| basic bulgarian phrases | 140 | 0 | Worth a page later |
+| bulgarian alphabet in english | 140 | low | Covered by the same page |
+| learn bulgarian free | **70** | — | Your original phrasing — too thin |
+| bulgarian cyrillic alphabet | 70 | 4 | Covered |
+| bulgarian language course | 20 | high | Ignore |
+| bulgarian for beginners | 10 | high | Ignore |
 
-1. Zoho Campaigns → **Contacts → Manage Lists → Create List**. Call it something like
-   `BulgariaReady Waitlist`.
-2. Add three custom fields to that list, so the dropdowns on the page have somewhere to
-   land:
-   - `Passport` (single line) → receives `CONTACT_CF1`
-   - `Reason` (single line) → receives `CONTACT_CF2`
-   - `Budget` (single line) → receives `CONTACT_CF3`
-3. **Signup Forms → Embed Form.** Build a form with Email, First Name and those three
-   custom fields.
-4. Zoho gives you generated HTML. From it, copy:
-   - the `<form>` tag's `action` URL
-   - every `<input type="hidden">` as a name/value pair
-5. Paste them into the `ZOHO` object near the bottom of `index.html`:
+"Learn bulgarian free" gets 70 searches a month. "Bulgarian alphabet" gets 2,400 at
+**difficulty 0** — meaning a new page with decent content can realistically rank. The
+whole alphabet cluster is worth roughly 2,900/mo and nearly all of it is difficulty
+0–5.
+
+### Relocation keywords, for the hub page
+
+| Keyword | Volume/mo | Difficulty | Notes |
+|---|---:|---:|---|
+| property for sale in bulgaria | 3,600 | 9 | **Don't chase** — see below |
+| cost of living in bulgaria | 260 | 0 | Easy win, write this next |
+| living in bulgaria | 210 | 0 | Easy win |
+| buying property in bulgaria | 170 | 23 | Hardest of the set |
+| moving to bulgaria from uk | 170 | 0 | **Best intent** — CPC £2.12 |
+| moving to bulgaria | 90 | low | — |
+| retiring to bulgaria | 40 | 2 | Small but perfectly matched |
+
+**Why not "property for sale in bulgaria"** despite 3,600/mo and difficulty 9: the
+intent is transactional. Those people want listings. You have no listings, so they
+bounce, and bouncing traffic teaches Google the page is a poor result. Chasing it
+would cost you ranking on the terms you *can* satisfy.
+
+**"moving to bulgaria from uk" has a £2.12 CPC** — advertisers pay real money for that
+click, which tells you it converts. At difficulty 0 it's the single best target on the
+list, which is why it's the `<h1>` on the hub page.
+
+### Honest caveats
+
+- **Volumes are declining.** The alphabet term is down ~21% year on year, and the
+  relocation cluster is down similarly. Still worth having; don't model growth on it.
+- **Alphabet traffic is mostly not movers.** Search intent is informational —
+  students, hobbyists, people curious about Cyrillic. Conversion to a relocation app
+  will be a low single-digit percentage. That is still infinitely more than the app
+  gets today, and the page costs nothing to keep.
+- **These are UK figures.** Ireland is a fraction of the volume; the numbers are
+  dominated by UK search.
+
+---
+
+## 2. Suggested next pages
+
+In priority order, all difficulty 0 and all matched to what the app already does:
+
+1. **Cost of living in Bulgaria** (260/mo, KD 0) — a real table with euro figures
+2. **Living in Bulgaria** (210/mo, KD 0) — the honest pros-and-cons piece
+3. **Basic Bulgarian phrases** (140/mo, KD 0) — natural sequel to the alphabet page
+4. **Retiring to Bulgaria** (40/mo, KD 2) — small, but exactly your buyer
+
+Each one should link to the app and to the other guides. That internal linking is what
+makes a cluster rank rather than a set of orphan pages.
+
+---
+
+## 3. Deploying to the subdomain
+
+Target: **`learn.bulgariaready.com`**, leaving the app on the root domain.
+
+1. Host the folder on Netlify, Vercel or Cloudflare Pages (drag-and-drop works).
+2. Add `learn.bulgariaready.com` as a custom domain there.
+3. At your DNS provider, add a `CNAME` for `learn` pointing at the host.
+4. **Don't touch the MX records** — that's your Zoho mailbox.
+5. Submit `https://learn.bulgariaready.com/sitemap.xml` in Google Search Console.
+
+Pretty URLs: the alphabet page should serve at `/bulgarian-alphabet`, not
+`/bulgarian-alphabet.html`. Netlify and Cloudflare Pages do this automatically. On
+Vercel set `"cleanUrls": true` in `vercel.json`. The canonical tags already assume the
+clean URL.
+
+### One SEO tradeoff worth knowing
+
+Google treats a subdomain as a largely separate site, so `learn.bulgariaready.com`
+won't inherit much authority from the root domain. A subfolder —
+`bulgariaready.com/learn/` — is meaningfully better for SEO. The subdomain is the
+right call *only* because you want the app untouched, and it is a genuine cost. If you
+later get comfortable putting a reverse proxy or rewrite in front of the app, moving
+this to a subfolder is the single biggest ranking upgrade available.
+
+---
+
+## 4. Email capture
+
+**Zoho Mail on its own will not work.** It's a mailbox — it receives messages, it
+doesn't collect or segment a list. You need **Zoho Campaigns** (free tier is plenty),
+with Zoho Mail as the address people see and reply to.
+
+1. Zoho Campaigns → **Contacts → Manage Lists → Create List**.
+2. Add three custom fields: `Passport` → `CONTACT_CF1`, `Reason` → `CONTACT_CF2`,
+   `Budget` → `CONTACT_CF3`.
+3. **Signup Forms → Embed Form**, then copy the generated form's `action` URL and every
+   `<input type="hidden">` into the `ZOHO` object at the bottom of `index.html`:
 
 ```js
 var ZOHO = {
   ACTION: 'https://xxxxx.maillist-manage.eu/weboptin.zc',
-  HIDDEN: {
-    'zc_trackCode':  '...',
-    'lD':            '...',
-    'emailReportId': '...',
-    'zx':            '...',
-    'submitType':    'optinCustomView',
-    'mode':          'OptinCreateView'
-  }
+  HIDDEN: { 'zc_trackCode': '...', 'lD': '...', 'zx': '...' }
 };
 ```
 
-6. Turn on **double opt-in** in the list settings, and set the confirmation and welcome
-   emails to send from your Zoho Mail address on your own domain.
+4. Turn on double opt-in and send confirmations from your Zoho address.
 
-### Preview mode
+**Preview mode:** while `ACTION` is empty the form validates and confirms but posts
+nothing. Safe to deploy before Zoho is connected — it just won't capture anything.
 
-While `ACTION` is empty the form runs in preview mode: it validates properly and shows
-the success state, but posts nothing anywhere. The page is safe to put live before Zoho
-is connected — it just won't capture anything, so don't drive traffic at it yet.
-
-### Why the field names look like that
-
-`CONTACT_EMAIL`, `FIRSTNAME` and `CONTACT_CF1..3` are Zoho Campaigns' own naming. The
-dropdown *values* (`retiring`, `holiday_home`, `under_30k`, `uk`, `eu`…) deliberately
-match the `UserProfile` enums in the Base44 app, so in January you can map a Zoho export
-straight onto app profiles without re-keying anything.
+Dropdown values (`retiring`, `uk`, `under_30k`…) deliberately match the `UserProfile`
+enums in the Base44 app, so a Zoho export maps onto app profiles without re-keying.
 
 ---
 
-## 3. Deploying
+## 5. Placeholders to fill
 
-The page is static — anything that serves HTML will do.
+Search `TODO`. Also:
 
-**It cannot be served from this repo's GitHub Pages site.** `trackrracing-landing` has a
-`CNAME` pointing at `join.trackrracing.com`, and GitHub Pages allows one custom domain
-per repository. The files live here for now; they need their own home.
-
-Pick one:
-
-- **New GitHub repo + Pages** — recommended. Copy `index.html` to the root of a fresh
-  repo, add a `CNAME` containing your Bulgaria domain, enable Pages. Clean separation,
-  free, and TrackrRacing stays untouched.
-- **Vercel / Netlify** — drag-and-drop or point at the repo, then attach the domain.
-- **Cloudflare Pages** — if you want the domain's DNS there too. Watch the MX records
-  when transferring, or you'll knock out the Zoho mailbox.
+- `hello@bulgariaready.com` — replace with your real Zoho address (3 places)
+- `/privacy.html` — **write this.** You're collecting email addresses from UK and EU
+  residents, so GDPR applies. The form already has explicit unticked consent, which is
+  the part most sites get wrong, but you still need the policy page.
 
 ---
 
-## 4. Built-in behaviour worth knowing
+## 6. Facts on these pages
 
-- **Honeypot** — a hidden `website_url` field. Bots fill it, people don't; submissions
-  that contain it are silently discarded.
-- **Returning visitors** — anyone who has already registered on that device sees the
-  confirmed state instead of the form. Stored in `localStorage`, wrapped in try/catch so
-  private browsing doesn't break the page.
-- **Accessibility** — real labels on every field, visible focus rings, `prefers-reduced-motion`
-  respected, 17px base body size (deliberately large: a lot of this audience is 50+).
-- **No tracking** — no analytics, no pixels, no third-party scripts. Add them if you
-  want, but that then needs a cookie banner.
+Verified September 2026 — re-check each January:
 
----
+- Bulgaria adopted the euro **1 January 2026** at 1.95583 BGN; the lev ceased to be
+  legal tender **1 February 2026**.
+- Full **Schengen member since 1 January 2025**.
+- **Non-EU nationals (including UK citizens) cannot own land** in their own name. They
+  can own apartments and buildings. Land needs a Bulgarian entity, typically an EOOD.
+  Agricultural and forest land is restricted regardless of nationality.
+- UK citizens need a **Type D long-stay visa** before travelling, then an annually
+  renewed residence permit; permanent residence after five years.
 
-## 5. Facts on the page, and when to re-check them
-
-The page makes specific factual claims. They were verified in September 2026:
-
-- Bulgaria adopted the euro on **1 January 2026** at 1.95583 BGN; the lev ceased to be
-  legal tender on **1 February 2026**.
-- Bulgaria has been a **full Schengen member since 1 January 2025** — no land, air or
-  sea border checks.
-- **Non-EU nationals (including UK citizens) cannot own land** in Bulgaria in their own
-  name. They can own apartments and buildings. Land requires a Bulgarian legal entity,
-  typically an EOOD. Agricultural and forest land is restricted regardless of
-  nationality.
-- UK citizens need a **Type D long-stay visa**, applied for before travelling, then a
-  residence permit renewed annually; permanent residence after five years of continuous
-  legal residence.
-
-Re-check before any significant traffic push, and again each January. The page carries a
-"correct as of September 2026" line and a prominent not-legal-advice disclaimer — keep
-both.
+Both pages carry a "correct as of September 2026" line and a not-legal-advice
+disclaimer. Keep both.
 
 ---
 
-## 6. Suggested next step
+## 7. Built-in behaviour
 
-The strongest single upgrade is a **lead magnet**: a "Bulgaria Move Starter Checklist"
-PDF delivered instantly by the Zoho autoresponder. It reliably lifts signup rates versus
-"we'll email you eventually", and it gives your January launch email a warm list that
-already knows who you are.
+- **Honeypot** `website_url` field — bots fill it, submissions are silently dropped
+- **Returning visitors** see the confirmed state (`localStorage`, try/catch wrapped)
+- **Accessibility** — real labels, visible focus rings, `aria-pressed` on the letter
+  grid, reduced-motion respected, 17px base type
+- **No tracking** — no analytics or pixels, so no cookie banner needed. Adding
+  analytics changes that.
+- The alphabet table is **static HTML**, not JS-rendered, so Google indexes all 30 rows

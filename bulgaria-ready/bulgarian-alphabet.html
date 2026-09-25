@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Bulgarian Alphabet: All 30 Cyrillic Letters with English Sounds</title>
+<meta name="description" content="A free guide to the Bulgarian alphabet — all 30 Cyrillic letters, how each one sounds in English, the six letters that trick English speakers, and real Bulgarian signs to practise on.">
+<link rel="canonical" href="https://learn.bulgariaready.com/bulgarian-alphabet">
+
+<meta property="og:title" content="The Bulgarian Alphabet: All 30 Cyrillic Letters with English Sounds">
+<meta property="og:description" content="Learn to read Bulgarian signs in an afternoon. All 30 letters, the six that trick English speakers, and real signs to practise on. Free.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learn.bulgariaready.com/bulgarian-alphabet">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  .letter-hero { padding: 56px 0 8px; }
+  .letter-hero h1 { font-size: clamp(34px, 5.6vw, 54px); margin-bottom: 18px; }
+  .letter-hero .lede { font-size: 19px; max-width: 660px; margin-bottom: 26px; }
+
+  .quick-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .qf {
+    background: var(--green-soft);
+    color: var(--green-dark);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+  }
+
+  /* interactive letter grid */
+  .alpha-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .alpha-btn {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 4px 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.1;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .alpha-btn small {
+    display: block;
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
+  .alpha-btn:hover { border-color: var(--green); background: var(--green-soft); }
+  .alpha-btn.tricky { border-color: #E8C4B2; }
+  .alpha-btn[aria-pressed="true"] {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+  .alpha-btn[aria-pressed="true"] small { color: rgba(255,255,255,0.85); }
+
+  .detail {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 24px;
+    align-items: center;
+    min-height: 130px;
+  }
+  .detail-char {
+    font-family: var(--display);
+    font-size: 52px;
+    font-weight: 600;
+    color: var(--green);
+    text-align: center;
+    line-height: 1;
+  }
+  .detail-name { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+  .detail-sound { font-size: 19px; color: var(--ink); font-weight: 600; margin-bottom: 8px; }
+  .detail-ex { font-size: 15px; color: var(--muted); }
+  .detail-ex b { color: var(--ink); font-weight: 600; }
+
+  /* signs practice */
+  .signs { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .sign {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .sign-word {
+    font-family: var(--display);
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+  .sign-tr { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
+  .sign-en { font-size: 15px; font-weight: 600; color: var(--green); }
+
+  .tricky-list { list-style: none; display: grid; gap: 14px; }
+  .tricky-list li {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--terra);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+  .tricky-list .tl-char {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--terra);
+    margin-right: 10px;
+  }
+
+  .cta-band {
+    background: var(--green);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    text-align: center;
+  }
+  .cta-band h2 { color: #fff; font-size: clamp(24px, 3.6vw, 32px); margin-bottom: 12px; }
+  .cta-band p { color: rgba(255,255,255,0.86); font-size: 16px; max-width: 520px; margin: 0 auto 24px; }
+  .cta-band .btn-primary { background: #fff; color: var(--green-dark); }
+  .cta-band .btn-primary:hover { background: #EAF2EC; }
+
+  @media (max-width: 560px) {
+    .detail { grid-template-columns: 64px 1fr; gap: 16px; padding: 20px; }
+    .detail-char { font-size: 40px; }
+    .alpha-grid { grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Bulgaria<span>Ready</span></a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Moving to Bulgaria</a>
+      <a href="https://bulgariaready.com" class="btn btn-primary btn-sm">Open the app</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="letter-hero">
+  <div class="wrap">
+    <p class="eyebrow">Free guide · No signup needed</p>
+    <h1>The Bulgarian Alphabet</h1>
+    <p class="lede">
+      Thirty letters. Most English speakers can read Bulgarian street signs after an
+      afternoon with this page — because a third of the alphabet already looks and
+      sounds like English, and another third only <em>looks</em> familiar.
+    </p>
+    <div class="quick-facts">
+      <span class="qf">30 letters</span>
+      <span class="qf">6 vowels</span>
+      <span class="qf">Cyrillic script</span>
+      <span class="qf">Invented in Bulgaria, 9th century</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INTERACTIVE GRID ═══ -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Tap any letter</h2>
+    <p class="section-intro">
+      Letters outlined in orange are the ones that catch English speakers out — they
+      look like a letter you know, but they don't sound like it.
+    </p>
+
+    <div class="alpha-grid" id="alphaGrid"></div>
+
+    <div class="detail" id="detail" aria-live="polite">
+      <div class="detail-char" id="dChar">А</div>
+      <div>
+        <div class="detail-name">Called <span id="dName">а</span></div>
+        <div class="detail-sound" id="dSound">Sounds like <b>a</b> in "father"</div>
+        <p class="detail-ex" id="dEx"><b>Аптека</b> — apteka — pharmacy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE SIX TRAPS ═══ -->
+<section class="tint">
+  <div class="wrap narrow">
+    <p class="eyebrow">Read this bit twice</p>
+    <h2 class="section-title">The six letters that trip everyone up</h2>
+    <p class="section-intro">
+      These look like Latin letters you already know. They are not. Getting these six
+      wrong is the difference between reading a sign and guessing at it.
+    </p>
+
+    <ul class="tricky-list">
+      <li><span class="tl-char">В в</span> is <strong>V</strong>, not B. <em>Вход</em> = "vhod" = entrance.</li>
+      <li><span class="tl-char">Н н</span> is <strong>N</strong>, not H. <em>Не</em> = "ne" = no.</li>
+      <li><span class="tl-char">Р р</span> is a rolled <strong>R</strong>, not P. <em>Ресторант</em> = "restorant".</li>
+      <li><span class="tl-char">С с</span> is <strong>S</strong>, not C. <em>Сметка</em> = "smetka" = the bill.</li>
+      <li><span class="tl-char">У у</span> is <strong>OO</strong>, not Y. <em>Улица</em> = "ulitsa" = street.</li>
+      <li><span class="tl-char">Х х</span> is a throaty <strong>H</strong>, not X. <em>Хляб</em> = "hlyab" = bread.</li>
+    </ul>
+
+    <p class="disclaimer" style="margin-top:26px">
+      <strong>And one that has no English equivalent at all.</strong> The letter
+      <strong>Ъ</strong> is a vowel — a short "uh" sound, like the u in "curt". It is
+      never silent and never a hard sign, whatever you may have learned about Russian.
+      You'll meet it immediately: <strong>България</strong> is "Bul-<em>ga</em>-ria".
+    </p>
+  </div>
+</section>
+
+<!-- ═══ FULL TABLE (static for SEO) ═══ -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Full reference</p>
+    <h2 class="section-title">All 30 letters</h2>
+    <p class="section-intro">
+      Bulgarian is close to phonetic: letters almost always sound the way they look, so
+      once you know the table you can pronounce words you've never seen.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Letter</th>
+            <th scope="col">Name</th>
+            <th scope="col">Sounds like</th>
+            <th scope="col">Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">А а</th><td>a</td><td>a in "father"</td><td>Аптека — pharmacy</td></tr>
+          <tr><th scope="row">Б б</th><td>bŭ</td><td>b in "book"</td><td>Банка — bank</td></tr>
+          <tr><th scope="row">В в</th><td>vŭ</td><td class="careful">v in "van" — not b</td><td>Вход — entrance</td></tr>
+          <tr><th scope="row">Г г</th><td>gŭ</td><td>g in "go"</td><td>Гара — train station</td></tr>
+          <tr><th scope="row">Д д</th><td>dŭ</td><td>d in "dog"</td><td>Днес — today</td></tr>
+          <tr><th scope="row">Е е</th><td>e</td><td>e in "bed"</td><td>Един — one</td></tr>
+          <tr><th scope="row">Ж ж</th><td>zhŭ</td><td>s in "measure"</td><td>Жена — woman</td></tr>
+          <tr><th scope="row">З з</th><td>zŭ</td><td>z in "zoo"</td><td>Здравей — hello</td></tr>
+          <tr><th scope="row">И и</th><td>i</td><td>ee in "see"</td><td>Изход — exit</td></tr>
+          <tr><th scope="row">Й й</th><td>i kratko</td><td>y in "boy"</td><td>Май — May</td></tr>
+          <tr><th scope="row">К к</th><td>kŭ</td><td>k in "kite"</td><td>Кафе — coffee</td></tr>
+          <tr><th scope="row">Л л</th><td>lŭ</td><td>l in "lamp"</td><td>Ляво — left</td></tr>
+          <tr><th scope="row">М м</th><td>mŭ</td><td>m in "map"</td><td>Мляко — milk</td></tr>
+          <tr><th scope="row">Н н</th><td>nŭ</td><td class="careful">n in "no" — not h</td><td>Не — no</td></tr>
+          <tr><th scope="row">О о</th><td>o</td><td>o in "more"</td><td>Отворено — open</td></tr>
+          <tr><th scope="row">П п</th><td>pŭ</td><td>p in "pen"</td><td>Поща — post office</td></tr>
+          <tr><th scope="row">Р р</th><td>rŭ</td><td class="careful">rolled r — not p</td><td>Ресторант — restaurant</td></tr>
+          <tr><th scope="row">С с</th><td>sŭ</td><td class="careful">s in "sun" — not c</td><td>Сметка — the bill</td></tr>
+          <tr><th scope="row">Т т</th><td>tŭ</td><td>t in "top"</td><td>Тоалетна — toilet</td></tr>
+          <tr><th scope="row">У у</th><td>u</td><td class="careful">oo in "book" — not y</td><td>Улица — street</td></tr>
+          <tr><th scope="row">Ф ф</th><td>fŭ</td><td>f in "fish"</td><td>Фурна — bakery</td></tr>
+          <tr><th scope="row">Х х</th><td>hŭ</td><td class="careful">ch in "loch" — not x</td><td>Хляб — bread</td></tr>
+          <tr><th scope="row">Ц ц</th><td>tsŭ</td><td>ts in "cats"</td><td>Цена — price</td></tr>
+          <tr><th scope="row">Ч ч</th><td>chŭ</td><td>ch in "chair"</td><td>Час — hour</td></tr>
+          <tr><th scope="row">Ш ш</th><td>shŭ</td><td>sh in "shop"</td><td>Шест — six</td></tr>
+          <tr><th scope="row">Щ щ</th><td>shtŭ</td><td>"sht" run together</td><td>Поща — post office</td></tr>
+          <tr><th scope="row">Ъ ъ</th><td>er golyam</td><td class="careful">u in "curt" — a vowel</td><td>България — Bulgaria</td></tr>
+          <tr><th scope="row">Ь ь</th><td>er malak</td><td>softens the letter before it</td><td>Шофьор — driver</td></tr>
+          <tr><th scope="row">Ю ю</th><td>yu</td><td>yu in "yule"</td><td>Юни — June</td></tr>
+          <tr><th scope="row">Я я</th><td>ya</td><td>ya in "yard"</td><td>Ягода — strawberry</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRACTICE ═══ -->
+<section class="tint">
+  <div class="wrap">
+    <p class="eyebrow">Now try it</p>
+    <h2 class="section-title">Twelve signs you'll actually see</h2>
+    <p class="section-intro">
+      Cover the English and sound each one out. These are the words that get you through
+      a first week — on doors, shopfronts and bus stops.
+    </p>
+
+    <div class="signs">
+      <div class="sign"><div class="sign-word">ВХОД</div><div class="sign-tr">vhod</div><div class="sign-en">Entrance</div></div>
+      <div class="sign"><div class="sign-word">ИЗХОД</div><div class="sign-tr">izhod</div><div class="sign-en">Exit</div></div>
+      <div class="sign"><div class="sign-word">ОТВОРЕНО</div><div class="sign-tr">otvoreno</div><div class="sign-en">Open</div></div>
+      <div class="sign"><div class="sign-word">ЗАТВОРЕНО</div><div class="sign-tr">zatvoreno</div><div class="sign-en">Closed</div></div>
+      <div class="sign"><div class="sign-word">АПТЕКА</div><div class="sign-tr">apteka</div><div class="sign-en">Pharmacy</div></div>
+      <div class="sign"><div class="sign-word">БАНКА</div><div class="sign-tr">banka</div><div class="sign-en">Bank</div></div>
+      <div class="sign"><div class="sign-word">ПОЩА</div><div class="sign-tr">poshta</div><div class="sign-en">Post office</div></div>
+      <div class="sign"><div class="sign-word">БОЛНИЦА</div><div class="sign-tr">bolnitsa</div><div class="sign-en">Hospital</div></div>
+      <div class="sign"><div class="sign-word">ТОАЛЕТНА</div><div class="sign-tr">toaletna</div><div class="sign-en">Toilet</div></div>
+      <div class="sign"><div class="sign-word">СПИРКА</div><div class="sign-tr">spirka</div><div class="sign-en">Bus stop</div></div>
+      <div class="sign"><div class="sign-word">ЦЕНТЪР</div><div class="sign-tr">tsentar</div><div class="sign-en">Town centre</div></div>
+      <div class="sign"><div class="sign-word">ХЛЯБ</div><div class="sign-tr">hlyab</div><div class="sign-en">Bread</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section>
+  <div class="wrap narrow">
+    <div class="cta-band">
+      <h2>Learning the alphabet because you're moving?</h2>
+      <p>
+        BulgariaReady walks you through the rest of it — residency, buying a property,
+        bringing pets, and the paperwork in the order it has to happen.
+      </p>
+      <a href="https://bulgariaready.com" class="btn btn-primary">Open BulgariaReady</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="tint">
+  <div class="wrap narrow">
+    <p class="eyebrow">Common questions</p>
+    <h2 class="section-title">About the Bulgarian alphabet</h2>
+
+    <details class="faq-item">
+      <summary>How many letters are in the Bulgarian alphabet?</summary>
+      <p class="answer">
+        Thirty. Six are vowels (а, е, и, о, у, ъ) and the rest are consonants, plus ь
+        which modifies the consonant before it rather than making a sound of its own.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is Bulgarian the same as Russian?</summary>
+      <p class="answer">
+        No. Both use Cyrillic, but the alphabets differ and the languages are not
+        mutually intelligible. Russian has 33 letters to Bulgarian's 30. The biggest
+        trap for anyone coming from Russian is Ъ, which is a full vowel in Bulgarian but
+        a silent hard sign in Russian.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Where did the Cyrillic alphabet come from?</summary>
+      <p class="answer">
+        It was developed in the First Bulgarian Empire in the 9th century, by students
+        of Saints Cyril and Methodius, and spread from there across the Slavic world.
+        Bulgaria marks it every year on 24 May, which is a public holiday.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How long does it take to learn to read Bulgarian?</summary>
+      <p class="answer">
+        Reading — sounding words out — takes most people a few hours, because Bulgarian
+        spelling is close to phonetic. Understanding what you've read is a different and
+        much longer job, but being able to decode a street sign, a bill or a pharmacy
+        window is genuinely quick.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need Bulgarian to live in Bulgaria?</summary>
+      <p class="answer">
+        You can get by in tourist areas and among younger people in cities without it.
+        Away from the coast and in any dealing with a bank, a notary, a council office
+        or a builder, it stops being optional very quickly — and reading the alphabet is
+        the first step that pays for itself.
+      </p>
+    </details>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="logo">Bulgaria<span>Ready</span></div>
+      <div class="foot-links">
+        <a href="index.html">Moving to Bulgaria</a>
+        <a href="https://bulgariaready.com">The app</a>
+        <!-- TODO: your real Zoho address -->
+        <a href="mailto:hello@bulgariaready.com">hello@bulgariaready.com</a>
+      </div>
+    </div>
+    <p class="foot-legal">
+      &copy; 2026 BulgariaReady. This page is a free language reference and is not legal,
+      immigration or financial advice.
+    </p>
+  </div>
+</footer>
+
+<script>
+var LETTERS = [
+  ['А','а','a in "father"','Аптека','apteka','pharmacy',0],
+  ['Б','bŭ','b in "book"','Банка','banka','bank',0],
+  ['В','vŭ','v in "van" — not b','Вход','vhod','entrance',1],
+  ['Г','gŭ','g in "go"','Гара','gara','train station',0],
+  ['Д','dŭ','d in "dog"','Днес','dnes','today',0],
+  ['Е','e','e in "bed"','Един','edin','one',0],
+  ['Ж','zhŭ','s in "measure"','Жена','zhena','woman',0],
+  ['З','zŭ','z in "zoo"','Здравей','zdravey','hello',0],
+  ['И','i','ee in "see"','Изход','izhod','exit',0],
+  ['Й','i kratko','y in "boy"','Май','may','May',0],
+  ['К','kŭ','k in "kite"','Кафе','kafe','coffee',0],
+  ['Л','lŭ','l in "lamp"','Ляво','lyavo','left',0],
+  ['М','mŭ','m in "map"','Мляко','mlyako','milk',0],
+  ['Н','nŭ','n in "no" — not h','Не','ne','no',1],
+  ['О','o','o in "more"','Отворено','otvoreno','open',0],
+  ['П','pŭ','p in "pen"','Поща','poshta','post office',0],
+  ['Р','rŭ','a rolled r — not p','Ресторант','restorant','restaurant',1],
+  ['С','sŭ','s in "sun" — not c','Сметка','smetka','the bill',1],
+  ['Т','tŭ','t in "top"','Тоалетна','toaletna','toilet',0],
+  ['У','u','oo in "book" — not y','Улица','ulitsa','street',1],
+  ['Ф','fŭ','f in "fish"','Фурна','furna','bakery',0],
+  ['Х','hŭ','ch in "loch" — not x','Хляб','hlyab','bread',1],
+  ['Ц','tsŭ','ts in "cats"','Цена','tsena','price',0],
+  ['Ч','chŭ','ch in "chair"','Час','chas','hour',0],
+  ['Ш','shŭ','sh in "shop"','Шест','shest','six',0],
+  ['Щ','shtŭ','"sht" run together','Щастие','shtastie','happiness',0],
+  ['Ъ','er golyam','u in "curt" — a vowel','България','Balgariya','Bulgaria',1],
+  ['Ь','er malak','softens the letter before it','Шофьор','shofyor','driver',0],
+  ['Ю','yu','yu in "yule"','Юни','yuni','June',0],
+  ['Я','ya','ya in "yard"','Ягода','yagoda','strawberry',0]
+];
+
+(function () {
+  var grid = document.getElementById('alphaGrid');
+  var dChar = document.getElementById('dChar');
+  var dName = document.getElementById('dName');
+  var dSound = document.getElementById('dSound');
+  var dEx = document.getElementById('dEx');
+  var buttons = [];
+
+  function select(i) {
+    var L = LETTERS[i];
+    dChar.textContent = L[0] + ' ' + L[0].toLowerCase();
+    dName.textContent = L[1];
+    dSound.innerHTML = 'Sounds like <b>' + L[2] + '</b>';
+    dEx.innerHTML = '<b>' + L[3] + '</b> — ' + L[4] + ' — ' + L[5];
+    buttons.forEach(function (b, n) {
+      b.setAttribute('aria-pressed', n === i ? 'true' : 'false');
+    });
+  }
+
+  LETTERS.forEach(function (L, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'alpha-btn' + (L[6] ? ' tricky' : '');
+    b.setAttribute('aria-pressed', 'false');
+    b.setAttribute('aria-label', 'Letter ' + L[0] + ', sounds like ' + L[2]);
+    b.innerHTML = L[0] + ' ' + L[0].toLowerCase() + '<small>' + L[1] + '</small>';
+    b.addEventListener('click', function () { select(i); });
+    grid.appendChild(b);
+    buttons.push(b);
+  });
+
+  select(0);
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many letters are in the Bulgarian alphabet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thirty. Six are vowels (а, е, и, о, у, ъ) and the rest are consonants, plus ь which modifies the consonant before it rather than making a sound of its own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Bulgarian the same as Russian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Both use Cyrillic, but the alphabets differ and the languages are not mutually intelligible. Russian has 33 letters to Bulgarian's 30. The biggest trap for anyone coming from Russian is Ъ, which is a full vowel in Bulgarian but a silent hard sign in Russian."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where did the Cyrillic alphabet come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It was developed in the First Bulgarian Empire in the 9th century, by students of Saints Cyril and Methodius, and spread from there across the Slavic world. Bulgaria marks it every year on 24 May, which is a public holiday."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to learn to read Bulgarian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reading — sounding words out — takes most people a few hours, because Bulgarian spelling is close to phonetic. Understanding what you have read is a different and much longer job, but being able to decode a street sign, a bill or a pharmacy window is genuinely quick."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Bulgarian to live in Bulgaria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can get by in tourist areas and among younger people in cities without it. Away from the coast and in any dealing with a bank, a notary, a council office or a builder, it stops being optional very quickly."
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
